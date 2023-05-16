@@ -1,0 +1,1 @@
+C:\Users\User\Desktop\stonecat\projectfile\classcodefile\Rust\project\rust_project01\target\debug\rust_project01.exe: C:\Users\User\Desktop\stonecat\projectfile\classcodefile\Rust\project\rust_project01\src\main.rs
