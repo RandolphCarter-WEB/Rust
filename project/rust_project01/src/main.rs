@@ -1,9 +1,10 @@
 use std::fs::OpenOptions;
 
-fn plus_one(s: Option<i32>) -> Option<i32> {
+/// Option<Type> can use if you don't know the type of the value.
+fn plus_one(s: Option<i32>) {
     match s {
-        Some(i) => Some(i + 1),
-        None => None
+        Some(i) => println!("{}", i+1),
+        None => println!("None")
     }
 }
 
@@ -13,15 +14,17 @@ fn main() {
         println!("[testInner] notice : {}", test_inner);
     }
 
+    ///&str type cannot use additional && &str dont have
     let test_outer :&str = "hello! This is Outer";
     println!("[testOuter] notice : {}", test_outer);
     println!("[testOuter] notice len : {}", test_outer.len());
 
+    /// String type can use additional
     let mut test_text :String = String::from("hello! I'm replace Outer");
     test_text.push_str(" Oh and i's pushed Text");
     println!("[testOuter] notice : {}", test_text);
-    println!("[testOuter] notice len : {}", test_text.len());
-    println!("[testOuter] notice len : {}", test_text.capacity());
+    println!("[testOuter] notice len : {}", test_text.len()); /// Just string length
+    println!("[testOuter] notice capacity : {}", test_text.capacity()); /// mem storage size
 
     let num :_ = 10;
     let result :_
@@ -36,8 +39,10 @@ fn main() {
         } else if num == 5 {
             50
         } else {
-            100
+            0
     };
+
+    println!("[testOuter] notice : {}", result);
 
     match num {
         1 => println!("one"),
@@ -49,7 +54,7 @@ fn main() {
     };
 
     let test_num : Option<i32> = Some(10);
+    plus_one(test_num);
 
-    println!("[testOuter] notice : {}", result);
-    let result = plus_one(test_num);
+
 }
